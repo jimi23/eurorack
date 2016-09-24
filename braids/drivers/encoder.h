@@ -63,10 +63,10 @@ class Encoder {
     uint8_t a = quadrature_decoding_state_[0];
     uint8_t b = quadrature_decoding_state_[1];
     if ((a & 0x03) == 0x02 && (b & 0x03) == 0x00) {
-      increment = -1;
+      increment = 1;
     } else {
       if ((b & 0x03) == 0x02 && (a & 0x03) == 0x00) {
-        increment = 1;
+        increment = -1;
       }
     }
     return increment;
